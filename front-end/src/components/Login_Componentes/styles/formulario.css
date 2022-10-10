@@ -1,0 +1,14 @@
+#padre_formulario{
+    background-color: #7ec4cf;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-radius: 30px;
+}
+#padre_login{
+    background-color: #9bd1e5;
+}
+#padre_Login_Total{
+    background-color: #d1faff;
+    height: 100%;
+}

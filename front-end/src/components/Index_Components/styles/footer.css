@@ -1,0 +1,10 @@
+#creador{
+    text-align: center;
+}
+#contenedor_footer{
+    background-color:#7ec4cf;
+    text-align: center;
+}
+.redes_sociales:hover{
+    transform: scale(1.01);
+}
