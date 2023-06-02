@@ -2,14 +2,14 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import "./styles/formulario.css";
 import { useState } from 'react';
-let API = "http://localhost:5000";
+let API = "http://localhost:3500";
 export function Crear_cuenta() {
   const [nombre, setNombre] = useState("");
   const [mail, setMail] = useState("");
   const [contraseña, setContraseña] = useState("");
   const handleSubmit = async (e)=>{
     e.preventDefault();
-    const respuesta = await fetch(`${API}/users`,{
+    const respuesta = await fetch(`${API}/Crear_cuenta`,{
       method:"POST",
       headers:{"Content-Type":"application/json"
     },
@@ -23,7 +23,6 @@ export function Crear_cuenta() {
     console.log(data)
   }
 
-  console.log(API);
   return (
     <div id='padre_formulario'>'
     <div className="col-xl-6">

@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import "./styles/formulario.css";
 import { useState } from 'react';
-let API = "http://localhost:5000";
+let API = "http://localhost:3500";
 let mensaje = ""
 export function Formulario() {
   const [nombre, setNombre] = useState("");
@@ -11,7 +11,7 @@ export function Formulario() {
   const [username, setUsername] = useState("");
   const handleSubmit = async (e)=>{
     e.preventDefault();
-    const respuesta = await fetch(`${API}/inicio_sesion`,{
+    const respuesta = await fetch(`${API}/Iniciar_Sesion`,{
       method:["POST"],
       headers:{"Content-Type":"application/json"
     },
@@ -23,12 +23,10 @@ export function Formulario() {
     })
     
     const data = await respuesta.json();
-    console.log(data)
-    setUsername(data);
-    console.log(data.sesion);
-    if (data.sesion =="falso") {
-      mensaje = data.mensaje;
-      localStorage.setItem('sesion', "false");
+   
+    if (data.nombre!=undefined) {
+      mensaje = data.nombre;
+      localStorage.setItem('sesion', true);
 
       console.log(mensaje);
       
@@ -51,8 +49,7 @@ export function Formulario() {
   
   
   
-  console.log(API);
-  console.log(username);
+  
   return (
   
     <div id='padre_formulario'>'

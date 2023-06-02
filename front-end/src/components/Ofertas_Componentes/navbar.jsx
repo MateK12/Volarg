@@ -7,11 +7,15 @@ import {App} from "../../app";
 import {Login} from "../../login";
 import { Ideas } from '../../ideas';
 import { Link,Route ,Switch ,BrowserRouter } from 'react-router-dom';
+import { Prueba_props } from '../../prueba_prop';
+import { reload } from '../../app';
 export function Navbar_Oferta() {
   return (
     <nav>
+      <h1></h1>
     <Navbar bg="light" expand="lg">
       <Container>
+
       <img src={avion} alt="" />
         <Navbar.Brand href="#home">VolARG</Navbar.Brand>
         
@@ -19,10 +23,10 @@ export function Navbar_Oferta() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <BrowserRouter>
-              <Link to='/'><Nav.Link href="#link">Pagina principal</Nav.Link></Link>
-              <Link to='Quienes_Somos'><Nav.Link href="#home">¿Quienes somos?</Nav.Link></Link>
-              <Link to='Inicio'><Nav.Link href="#link">Iniciar sesión</Nav.Link></Link>
-              <Link to='Ideas'><Nav.Link href="#link">Ideas</Nav.Link></Link>
+              <Link onClick={reload}  to='/'><Nav.Link href="#link">Pagina principal</Nav.Link></Link>
+              <Link onClick={reload} to='Quienes_Somos'><Nav.Link href="#home">¿Quienes somos?</Nav.Link></Link>
+              <Link onClick={reload} to='Inicio'><Nav.Link href="#link">Iniciar sesión</Nav.Link></Link>
+              <Link onClick={reload} to='Ideas'><Nav.Link href="#link">Ideas</Nav.Link></Link>
 
               <Switch>
                   <Route path='/Inicio'><Login></Login></Route>
@@ -37,7 +41,7 @@ export function Navbar_Oferta() {
               <NavDropdown.Item href="#action/3.2">
                Qatar
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Nueva Zelanda</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">      <Prueba_props nombre="ddd"></Prueba_props></NavDropdown.Item>
               <NavDropdown.Divider />
            
             </NavDropdown>

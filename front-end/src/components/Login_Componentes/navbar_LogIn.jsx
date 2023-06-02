@@ -8,6 +8,7 @@ import {Login} from "../../login"
 import { Ideas } from '../../ideas';
 import { Link,Route ,Switch,BrowserRouter } from 'react-router-dom';
 import { App } from '../../app';
+import { reload } from '../../app';
 export function Navbar_Login() {
   return (
     <nav>
@@ -20,10 +21,10 @@ export function Navbar_Login() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <BrowserRouter>
-              <Link to='/'><Nav.Link href="#link">Pagina principal</Nav.Link></Link>
-              <Link to='Quienes_Somos'><Nav.Link href="#home">¿Quienes somos?</Nav.Link></Link>
-              <Link to='Ofertas'><Nav.Link href="#link">Ofertas imperdibles</Nav.Link></Link>
-              <Link to='Ideas'><Nav.Link href="#link">Ideas</Nav.Link></Link>
+              <Link onClick={reload} to='Quienes_Somos'><Nav.Link href="#home">¿Quienes somos?</Nav.Link></Link>
+              <Link onClick={reload} to='Ofertas'><Nav.Link href="#link">Ofertas imperdibles</Nav.Link></Link>
+              <Link onClick={reload} to='Ideas'><Nav.Link href="#link">Ideas</Nav.Link></Link>
+              <Link onClick={reload} to='/'><Nav.Link href="#link">Pagina principal</Nav.Link></Link>
 
 
               <Switch>
