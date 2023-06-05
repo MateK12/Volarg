@@ -15,14 +15,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import avion from "../src/components/assets/img/viajar.png";
 import "./components/Index_Components/styles/index.css"
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useContext } from 'react';
 export function reload() {
     setTimeout(()=>{
         window.location.reload()
     },100)
 }
  export function App() {
-   
+  const context_idea = useContext(Idea_contexto);
+
     return <>
     <div id='padre'>
     
@@ -68,7 +69,9 @@ export function reload() {
         <Switch>
         <Route path='/Inicio'><Login></Login></Route>
         <Route path='/Ofertas'><Pagina_oferta></Pagina_oferta></Route>
-        <Route path='/Ideas'><Ideas></Ideas></Route>
+        <Idea_contexto.Provider value={{User:"Mateo"}}>
+            <Route path='/Ideas'><Ideas></Ideas></Route>
+        </Idea_contexto.Provider>
         <Route path='/'>
         <div id='contenedor_index' className="container">
                 <div className="row">
